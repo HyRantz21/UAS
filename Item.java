@@ -1,5 +1,5 @@
 // Item.java
-public class Item {
+public class Item extends ShoppingCart{
     private String name;
     private double price;
 
