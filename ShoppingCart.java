@@ -8,20 +8,24 @@ public class ShoppingCart {
     public ShoppingCart() {
         items = new ArrayList<>();
     }
-
+    
     public void addItem(Item item) {
         items.add(item);
     }
-
+    
     public void removeItem(Item item) {
         items.remove(item);
     }
-
+    
     public double calculateTotal() {
         double total = 0;
         for (Item item : items) {
             total += item.getPrice();
         }
         return total;
+    }
+    
+    public List<Item> getItems() {
+        return items;
     }
 }
