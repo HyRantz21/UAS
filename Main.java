@@ -9,12 +9,16 @@ public class Main {
         Item item1 = new Item("Product 1", 10.99);
         Item item2 = new Item("Product 2", 5.99);
         Item item3 = new Item("Product 3", 7.99);
+        
+        Item q = new Item();
 
         List<Item> availableItems = new ArrayList<>();
         availableItems.add(item1);
         availableItems.add(item2);
         availableItems.add(item3);
+        availableItems.add(q);
 
+        
         //choses item section
         System.out.println("Available Items:");
         for (int i = 0; i < availableItems.size(); i++) {
@@ -61,6 +65,12 @@ public class Main {
             else if (selectedItemNumber >= 1 && selectedItemNumber <= cartItems.size()) {
                 Item selectedItem = cartItems.get(selectedItemNumber - 1);
                 cart.removeItem(selectedItem);
+
+                for (int i = 0; i < cartItems.size(); i++) {
+                    Item item = cartItems.get(i);
+                    System.out.println((i + 1) + ". " + item.getName() + " - $" + item.getPrice());
+                }
+
                 System.out.println("Removed " + selectedItem.getName() + " from the shopping cart.");
             } 
             else {
@@ -91,5 +101,7 @@ public class Main {
         }
 
         in.close();
+
+        
     }
 }
